@@ -17,95 +17,134 @@
         <div class="in-container">
            
             <input id="text-input" class="form-control form-control-lg" type="text"  aria-label=".form-control-lg example">
-            <div class="btn-grp">
-                <div class="trig-btn">
-                  <div class="cal-buttons">
+            <div id="sec-1">
+                <div class="btn-grp">
+                    <div class="trig-btn">
+                    <div class="cal-buttons">
 
-                  </div>
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >π</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >e</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >^</button>
-        
                     </div>
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >sqrt</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >(</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >)</button>
-        
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >π</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >e</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >^</button>
+            
+                        </div>
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >sqrt</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >(</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >)</button>
+            
+                        </div>
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >sin</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >cos</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >tan</button>
+            
+                        </div>
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="displayHistory(event)" >history</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="clearInput(event)" >clear</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="varSection(event)" >var</button>
+            
+                        </div>
                     </div>
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >sin</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >cos</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >tan</button>
-        
+                    <div class="num-btn">
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >7</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >8</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >9</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >/</button>
+            
+                        </div>
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >4</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >5</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >6</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >*</button>
+            
+                        </div>
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >1</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >2</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >3</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >-</button>
+            
+                        </div>
+                        <div class="cal-buttons" >
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >0</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >.</button>
+                            <button type="button" class="btn btn-dark btn-lg"disabled="true" >ans</button>
+                            <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >+</button>
+            
+                        </div>
                     </div>
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" disabled="true" >history</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >NAN</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" disabled="true" >NAN</button>
-        
-                    </div>
-                </div>
-                <div class="num-btn">
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >7</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >8</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >9</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >/</button>
-        
-                    </div>
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >4</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >5</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >6</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >*</button>
-        
-                    </div>
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >1</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >2</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >3</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >-</button>
-        
-                    </div>
-                    <div class="cal-buttons" >
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >0</button>
-                        <button type="button" class="btn btn-dark btn-lg"disabled="true" >.</button>
-                        <button type="button" class="btn btn-dark btn-lg"disabled="true" >ans</button>
-                        <button type="button" class="btn btn-dark btn-lg" onclick="btnInput(event)" >+</button>
-        
-                    </div>
-                </div>
 
+                </div>
+                <button type="button" class="btn btn-dark btn-lg" onclick="Convert()">=</button>
+        </div>
+        <div id="sec-2">
+            <div class="abc">
+                <div class="cal-v-buttons" >
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >a</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >b</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">c</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >f</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >g</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >h</button>
+                </div>
+                <div class="cal-v-buttons" >
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">i</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">j</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">k</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >l</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >m</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >n</button>
+                </div>
+                <div class="cal-v-buttons" >
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">o</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">p</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">q</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >r</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >s</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >t</button>
+                </div>
+                <div class="cal-v-buttons" >
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">u</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">v</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">w</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >x</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >y</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >z</button>
+                </div>
             </div>
-            <button type="button" class="btn btn-dark btn-lg" onclick="Convert()">=</button>
+            <div class="numeric-123">
+                <div class="cal-v-buttons" >
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >1</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >2</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >3</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)"/ >4</button>
+                  
+                </div>
+                <div class="cal-v-buttons" >
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >5</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">6</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">7</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">8</button>
+
+                  
+                </div>
+                <div class="cal-v-buttons" >
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">9</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)">0</button>
+                    <button type="button" class="btn btn-dark btn" onclick="varSet(event)" >=</button>
+                    <button type="button" class="btn btn-dark btn" onclick="settingVariable(event)" >↵</button>
+
+               
+            </div>
+        </div>
         </div>
      
-        <!-- <table>
-            <tr>
-                <td>
-                    <button type="button" class="btn btn-dark btn-lg" >1</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-dark btn-lg" >2</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-dark btn-lg" >3</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="button" class="btn btn-dark btn-lg" >1</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-dark btn-lg" >2</button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-dark btn-lg" >3</button>
-                </td>
-            </tr>
-        </table> -->
+       
     </div>
    
 </body>

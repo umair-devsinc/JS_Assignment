@@ -33,3 +33,10 @@
     width: 100px;
     margin-right: 5px;
 }
+#sec-2{
+    display: none;
+}
+.cal-v-buttons{
+    margin: 2px;
+}
+.cal-v-buttons .btn{width: 50px ;}

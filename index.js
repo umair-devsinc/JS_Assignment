@@ -1,4 +1,5 @@
 
+    let history = JSON.parse(localStorage.getItem("allEntries"));
 
     function postfixEval( postfixArray ) {
         var stack_ = [];
@@ -41,34 +42,38 @@
                     console.log(Math.sin(45));
                     stack_.push(Math.sin(sin_value)); 
                 }
+                else if(postfixArray[i][0]=='c' && postfixArray[i][1]=='o' && postfixArray[i][2]=='s'){
+                    cos_value = ""
+                    var j = 4;
+                    while(postfixArray[i][j]!=')')
+                    {
+                        cos_value+=postfixArray[i][j];
+                        j++;
+                    }
+                    // stack.push(Math.sin(postfixArray[i+1]));
+                    console.log(cos_value)
+                    console.log(Math.cos(45));
+                    stack_.push(Math.cos(cos_value)); 
+                }
+                else if(postfixArray[i][0]=='t' && postfixArray[i][1]=='a' && postfixArray[i][2]=='n'){
+                    tan_value = ""
+                    var j = 4;
+                    while(postfixArray[i][j]!=')')
+                    {
+                        tan_value+=postfixArray[i][j];
+                        j++;
+                    }
+                    // stack.push(Math.sin(postfixArray[i+1]));
+                    console.log(tan_value)
+                    console.log(Math.tan(45));
+                    stack_.push(Math.tan(tan_value)); 
+                }
             }else {
                 console.log("float",parseFloat(postfixArray[i]));
                 stack_.push( parseFloat(postfixArray[i]) );
             }
         }
-        // for( element of postfixArray){
-        //     console.log("element: " + element);
-
-        //     if(isNaN(element)){
-        //         var x = stack.pop();
-        //         var y = stack.pop();
-        //         console.log("var x/y: " + x + " " + y + " element: " + element) ;
-        //         if (element == "+"){
-        //             result = (y+x);
-        //             console.log("Expected Result: " + result)
-        //             stack.push(y + x);
-        //         } else if (element == '-'){
-        //             stack.push(y - x);
-        //         } else if (element == '*'){
-        //             stack.push(y * x);
-        //         } else if (element == '/'){
-        //             stack.push(y / x);
-        //         }
-        //     } else {
-        //         stack.push( parseFloat(element) );
-        //     }
-        // }
-        //final check for non numbers within the stack
+      
         var returnValue = null;
         while( stack_.length > 0 ){
             console.log( stack_ );
@@ -83,20 +88,16 @@
     }
     
 
-// Created an empty array
 var stackarr = [];
 
-// Variable topp initialized with -1
 var topp = -1;
 
-// Push function for pushing
-// elements inside stack
+
 function push(e) {
 	topp++;
 	stackarr[topp] = e;
 }
 
-// Pop function for returning top element
 function pop() {
 	if (topp == -1)
 		return 0;
@@ -107,8 +108,7 @@ function pop() {
 	}
 }
 
-// Function to check whether the passed
-// character is operator or not
+
 function operator(op) {
 	if (op == '+' || op == '-' ||
 		op == '^' || op == '*' ||
@@ -120,7 +120,6 @@ function operator(op) {
 		return false;
 }
 
-// Function to return the precedency of operator
 function precedency(pre) {
 	if (pre == '@' || pre == '(' || pre == ')') {
 		return 1;
@@ -138,23 +137,17 @@ function precedency(pre) {
 		return 0;
 }
 
-// Function to convert Infix to Postfix
 function InfixtoPostfix(conv_arr) {
 
-	// Postfix array created
 	let postfix = [];
 	var temp = 0;
     postfix[temp]="";
 	push('@');
-	//infixval = document.getElementById("text-input").value;
     infixval=conv_arr;
-    //var str = infixval.replace(/(\d+)([/*-+]+)/g,' $1 $2');
-    //console.log("regex"+str);
-	// Iterate on infix string
+ 
 	for (var i = 0; i < infixval.length; i++) {
 		var el = infixval[i];
 
-		// Checking whether operator or not
 		if (operator(el)) {
 			if (el == ')') {
 				while (stackarr[topp] != "(") {
@@ -163,13 +156,11 @@ function InfixtoPostfix(conv_arr) {
 				pop();
 			}
 
-			// Checking whether el is ( or not
 			else if (el == '(') {
 				push(el);
 			}
 
-			// Comparing precedency of el and
-			// stackarr[topp]
+		
 			else if (precedency(el) > precedency(stackarr[topp])) {
 				push(el);
 			}
@@ -188,17 +179,14 @@ function InfixtoPostfix(conv_arr) {
 		}
 	}
 
-	// Adding character until stackarr[topp] is @
 	while (stackarr[topp] != '@') {
 		postfix[temp++] = pop();
 	}
 
-	// String to store postfix expression
 	var st = "";
 	for (var i = 0; i < postfix.length; i++)
 		st += postfix[i];
 
-	// To print postfix expression in HTML
     console.log("postfix is calculated"+ postfix);
   console.log(postfixEval(postfix));
   document.getElementById("ans").innerText=postfixEval(postfix);
@@ -215,14 +203,14 @@ function operator_convert(arr,i) {
 
 		return 0;
 	}
-    else if(arr[i]=='s'&&arr[i+1]=='i'&&arr[i+2]=='n' )
+    else if(arr[i]=='s'&&arr[i+1]=='i'&&arr[i+2]=='n'||arr[i]=='t'&&arr[i+1]=='a'&&arr[i+2]=='n'||arr[i]=='c'&&arr[i+1]=='o'&&arr[i+2]=='s' )
     {
         
 
         return 3;
 
     }
-	else if(arr[i]>='0'&&arr[i]<='9')
+	else if((arr[i]>='0'&&arr[i]<='9')|| arr[i]==".")
     {
         console.log("number");
 
@@ -241,6 +229,18 @@ function operator_convert(arr,i) {
 }
 const Convert=(e)=>{
     let arr=  document.getElementById("text-input").value;
+     var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+     if(existingEntries == null) existingEntries = [];
+    
+     var entry = {
+        
+         "expression": arr
+     };
+     localStorage.setItem("entry", JSON.stringify(entry));
+     existingEntries.push(entry);
+     localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+     console.log(JSON.parse(localStorage.getItem("allEntries")));
+    //end history
     let num_arr=[];
     let index=0;
     for(let i=0;i<arr.length;i++){
@@ -317,7 +317,7 @@ const Convert=(e)=>{
 function btnInput(e) {
     console.log(e.target.innerText);
     let input=e.target.innerText;
-    if(input=="sin")
+    if(input=="sin"||input=="cos"||input=="tan")
     {
     document.getElementById("text-input").value+=input+'(';
         
@@ -329,6 +329,49 @@ function btnInput(e) {
     }
     
 }
+function clearInput(e) {
+  
+    
+    document.getElementById("text-input").value="";
+
+    
+}
+function varSection(e) {
+  
+    
+    document.getElementById("sec-1").style.display="none";
+    document.getElementById("sec-2").style.display="flex";
+
+
+
+    
+}
+function varSet(e) {
+  
+    let input=e.target.innerText;
+    document.getElementById("text-input").value+=input;
+   
+
+
+
+    
+}
+function settingVariable(e){
+    
+    let input=document.getElementById("text-input").value;
+    let letter=input[0];
+    let val="";
+    for(let i=2;i<input.length;i++)
+    {
+        val+=input[i];
+    }
+    variables.push({"letter":letter, "value":val});
+    console.log(variables);
+    document.getElementById("sec-1").style.display="block";
+    document.getElementById("sec-2").style.display="none";
+}
+
+
 
 
 var variables = [{"letter":"s", "value":"5"},{"letter":"e", "value":"2.178"},{"letter":"π", "value":"3.14"}];
@@ -357,7 +400,9 @@ function getVariableValue(e){
 }
 
 
-//11211
-//44344
+function displayHistory(){
+    document.getElementById("text-input").value=history.pop().expression;
 
-//1144 23 4411
+
+
+}
